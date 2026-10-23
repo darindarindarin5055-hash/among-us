@@ -1,0 +1,89 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Vazirmatn', sans-serif;
+  background: #0a0a0a;
+  background-image: radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 100px 100px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.game-container {
+  text-align: center;
+  background: rgba(20, 20, 20, 0.9);
+  padding: 40px 20px;
+  border-radius: 20px;
+  border: 2px solid #333;
+  box-shadow: 0 0 30px rgba(255, 77, 77, 0.2);
+  max-width: 600px;
+  width: 90%;
+}
+
+h1 { color: #ff4d4d; margin-bottom: 10px; font-size: 28px; }
+#status-text { color: #aaa; margin-bottom: 30px; font-size: 16px; }
+
+.crew-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.crew-card {
+  background: #1a1a1a;
+  border: 2px solid #333;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}
+
+.crew-card:hover {
+  transform: scale(1.05);
+  border-color: #4da6ff;
+  box-shadow: 0 0 15px rgba(77, 166, 255, 0.4);
+}
+
+/* کاتێک یاریزانەکە دەدۆزرێتەوە */
+.crew-card.impostor-found {
+  background: #ff4d4d;
+  border-color: #ff4d4d;
+  animation: pulse 0.5s infinite alternate;
+}
+
+@keyframes pulse {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
+}
+
+.crew-card.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.btn {
+  padding: 12px 25px;
+  background: #4da6ff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-weight: 900;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: 'Vazirmatn', sans-serif;
+}
+.btn:hover { background: #1a8cff; transform: scale(1.05); }
+
+@media (max-width: 500px) {
+  .crew-grid { grid-template-columns: repeat(2, 1fr); }
+    }
